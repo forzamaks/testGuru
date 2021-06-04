@@ -14,12 +14,17 @@ categories = Category.create([
   {title: 'Machine learning'}
 ])
 
+users = User.create([
+  {name: 'test', email: 'test@test.test', password: 'password'},
+  {name: 'admin', email: 'admin@test.test', password: 'admin_pass'}
+])
+
 tests = Test.create([
-  {title: 'HTML', level: 1, category_id: categories[0].id},
-  {title: 'Ruby', level: 2, category_id: categories[1].id},
-  {title: 'JavaScript', level: 2, category_id: categories[0].id},
-  {title: 'GO', level: 3, category_id: categories[2].id},
-  {title: 'Node', level: 2, category_id:  categories[1].id}
+  {title: 'HTML', level: 1, category_id: categories[0].id, user_id: users[0].id},
+  {title: 'Ruby', level: 2, category_id: categories[1].id, user_id: users[0].id},
+  {title: 'JavaScript', level: 2, category_id: categories[0].id, user_id: users[0].id},
+  {title: 'GO', level: 3, category_id: categories[2].id, user_id: users[0].id},
+  {title: 'Node', level: 2, category_id:  categories[1].id, user_id: users[1].id}
 ])
 
 questions = Question.create([
@@ -37,7 +42,3 @@ Answer.create([
   {title: 'Вариант 4', question_id: questions[0].id}
 ])
 
-User.create([
-  {name: 'test', email: 'test@test.test', password: 'password'},
-  {name: 'admin', email: 'admin@test.test', password: 'admin_pass'},
-])
