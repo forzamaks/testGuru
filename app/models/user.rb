@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  has_many :tests_create, class_name: 'Test'
+  has_many :created_tests, class_name: 'Test'
   has_and_belongs_to_many :tests
 
   def user_tests_for_level(level)
