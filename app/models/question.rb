@@ -5,13 +5,6 @@ class Question < ApplicationRecord
 
   validates :body, presence: true
 
-  validate :validate_answer_count
 
-
-  private
-
-  def validate_answer_count
-    errors.add(:answers) if answers.count > 4 || answers.count < 1
-  end
 
 end
