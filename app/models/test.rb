@@ -17,7 +17,6 @@ class Test < ApplicationRecord
   validates :level, numericality: { greater_than_or_equal_to: 0 },
                     uniqueness: true, if :title_level_unique?
 
-  validate :title_level_unique
 
   def self.all_test_of_category(category)
     Test.joins(:category).where(title: category).order(id: :desc)
@@ -27,7 +26,7 @@ class Test < ApplicationRecord
     found_title = Test.find_by(title: title)
     found_level = Test.find_by(level: level)
     false if found_title.present? && fount_level.present?
-    
+
     true
   end
 
