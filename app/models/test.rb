@@ -22,12 +22,4 @@ class Test < ApplicationRecord
     Test.joins(:category).where(title: category).order(id: :desc)
   end
 
-  def title_level_unique?
-    found_title = Test.find_by(title: title)
-    found_level = Test.find_by(level: level)
-    true
-
-    false if found_title.present? && fount_level.present?
-  end
-
 end
