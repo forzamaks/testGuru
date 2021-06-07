@@ -12,10 +12,10 @@ class Test < ApplicationRecord
   scope :category_tests, -> { joins(:category) }
 
   validates :title, presence: true,
-                    uniqueness: true
+                    uniqueness: true, if :title_level_unique?
 
   validates :level, numericality: { greater_than_or_equal_to: 0 },
-                    uniqueness: true
+                    uniqueness: true, if :title_level_unique?
 
   validate :title_level_unique
 
@@ -23,10 +23,12 @@ class Test < ApplicationRecord
     Test.joins(:category).where(title: category).order(id: :desc)
   end
 
-  def title_level_unique
+  def title_level_unique?
     found_title = Test.find_by(title: title)
     found_level = Test.find_by(level: level)
-    errors.add([:title, :email]) if found_title.present? && fount_level.present?
+    false if found_title.present? && fount_level.present?
+    
+    true
   end
 
 end
