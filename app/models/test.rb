@@ -12,10 +12,10 @@ class Test < ApplicationRecord
   scope :category_tests, -> { joins(:category) }
 
   validates :title, presence: true,
-                    uniqueness: true, if :title_level_unique?
+                    uniqueness: { scope: :level }
 
   validates :level, numericality: { greater_than_or_equal_to: 0 },
-                    uniqueness: true, if :title_level_unique?
+                    uniqueness: { scope: :title }
 
 
   def self.all_test_of_category(category)
