@@ -1,0 +1,14 @@
+<h1><%= @question.body %> </h1>
+
+<% @question.answers.each do |answer| %> 
+  <div>
+    <p>
+    <input type="checkbox" />
+    <label ><%= answer.title %></label>
+    </p>
+  </div>
+<% end %>
+<hr/>
+<p>
+<a href="<%= question_path(@question.id) %>">Delete current question</a>
+</p>

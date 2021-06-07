@@ -1,0 +1,6 @@
+
+<% @tests.each do |test| %>
+  <div>
+    <h3><a href="<%= test_path(test.id) %>"><%= test.title %></a></h3>
+  </div>
+<% end %>
