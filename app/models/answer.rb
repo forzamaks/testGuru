@@ -6,17 +6,12 @@ class Answer < ApplicationRecord
   scope :join_question, -> { joins(:question) }
 
   validates :title, presence: true
-
-
   validate :validate_answer_count, on: :create
-
 
   private
 
   def validate_answer_count
-
-    answers = Answer.join_question.where(question_id: id)
-    errors.add(:question) if answers.count > 4
+    errors.add(:question, 'максимально допустимоек количество ответов 4') if question.answers.count > 4
   end
 
 end
