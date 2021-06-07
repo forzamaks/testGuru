@@ -25,9 +25,9 @@ class Test < ApplicationRecord
   def title_level_unique?
     found_title = Test.find_by(title: title)
     found_level = Test.find_by(level: level)
-    false if found_title.present? && fount_level.present?
-
     true
+
+    false if found_title.present? && fount_level.present?
   end
 
 end
