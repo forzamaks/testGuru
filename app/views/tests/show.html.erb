@@ -1,10 +1,8 @@
 <h1><%= @test.title %> </h1>
 
-<% @test.questions.each do |question| %> 
-  <div>
-    <p><a href="<%= question_path(question.id) %>"><%= question.body %></a></p>
-  </div>
-<% end %>
+
+<p><a href="<%= test_questions_path(params[:id]) %>">Questions</a></p>
+
 <hr/>
 <p>
 <a href="<%= new_test_question_path(@test.id) %>">Create new question</a>
