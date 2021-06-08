@@ -12,9 +12,13 @@ class TestsController < ApplicationController
   end
 
   def create
-    @test = Test.create(test_params)
+    @test = Test.new(test_params)
 
-    render plain: @test.inspect
+    if @test.save
+      render plain: 'good'
+    else
+      render plain: 'bad'
+    end
   end
 
   def delete
@@ -24,6 +28,6 @@ class TestsController < ApplicationController
   private 
 
   def test_params
-    params.require(:test).permit(:title, :level)
+    params.require(:test).permit(:title, :level, :category_id)
   end
 end
