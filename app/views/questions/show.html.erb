@@ -1,15 +1,11 @@
 
 <h3><%= @question.body %> </h3>
 
-<% @question.answers.each do |answer| %> 
-  <div>
-    <p>
-    <input type="checkbox" />
-    <label ><%= answer.title %></label>
-    </p>
-  </div>
-<% end %>
+<%= render @question.answers %>
+
 <hr/>
 <p>
-<a href="<%= question_path(@question.id) %>">Delete current question</a>
+  <%= link_to 'Back', test_path(@question.test_id) %> | 
+  <%= link_to 'Edit', edit_question_path(@question) %> | 
+  <%= link_to 'Delete', question_path(@question.id), method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>

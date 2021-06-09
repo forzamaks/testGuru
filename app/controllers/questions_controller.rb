@@ -1,12 +1,13 @@
 class QuestionsController < ApplicationController
 
-  before_action :find_test, only: %i[create]
-  before_action :find_question, only: %i[show, destroy]
+  before_action :find_test, only: [:index, :create, :new ]
+  before_action :find_test_on_question, only: [:edit, :show, :create ]
+  before_action :find_question, only: [:destroy, :show, :edit, :update, :find_test]
 
-  #rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+  # rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    @questions = Question.where(test_id: params[:test_id])
+    @questions = @test.questions
   end
 
   def show
@@ -14,23 +15,35 @@ class QuestionsController < ApplicationController
   end
 
   def new
-
+    @question = @test.questions.new
   end
 
   def create
     @question = @test.questions.new(question_params)
 
     if @question.save
-      render plain: 'good'
+      redirect_to @test
     else
-      render plain: 'bad'
+      render :new
+    end
+  end
+
+  def edit
+    
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
     end
   end
 
   def destroy
     @question.destroy
 
-    render html: '<h1>Question destroy</h1>'.html_safe
+    redirect_to questions_path
   end
 
 
@@ -45,7 +58,11 @@ class QuestionsController < ApplicationController
   end
 
   def find_test
-   @test = Test.find(params[:test_id])
+    @test = Test.find(params[:test_id])
+  end
+  def find_test_on_question
+    @question = Question.find(params[:id])
+    @test_from_question = Test.find(@question.test_id)
   end
 
   def find_question
