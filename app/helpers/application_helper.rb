@@ -5,6 +5,6 @@ module ApplicationHelper
   end
 
   def github_url(author, repo)
-    @url = "https://github.com/#{author}/#{repo}"
+    link_to 'Test Guru', "https://github.com/#{author}/#{repo}"
   end
 end
