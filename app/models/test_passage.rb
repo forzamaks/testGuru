@@ -4,7 +4,7 @@ class TestPassage < ApplicationRecord
 
   belongs_to :user
   belongs_to :test
-  belongs_to :question, class_name: 'Question',  optional: true
+  belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :next_question, on: :create
   before_update :next_question, on: :update
@@ -17,11 +17,11 @@ class TestPassage < ApplicationRecord
   end
 
   def completed?
-    question.nil?
+    current_question.nil?
   end
 
   def current_question_in_test
-    test.questions.find_index(self.question) + 1
+    test.questions.find_index(self.current_question) + 1
   end
 
   def test_result
@@ -29,11 +29,7 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-    if self.test_result >= SUCCESS_RESLUT_TEST_IN_PERCENT
-      true
-    else
-      false
-    end
+    self.test_result >= SUCCESS_RESLUT_TEST_IN_PERCENT
   end
 
   private
@@ -43,12 +39,14 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answers
-    question.answers.correct
+    current_question.answers.correct
   end
 
   def next_question
-    self.question = self.question.present? ? 
-                      test.questions.order(:id).where('id > ?', self.question.id).first :
-                      test.questions.first
+    if self.current_question.present?
+      self.current_question = test.questions.order(:id).where('id > ?', self.current_question.id).first
+    else
+      self.current_question = test.questions.first
+    end
   end
 end
