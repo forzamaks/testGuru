@@ -1,0 +1,12 @@
+<h1>The <%= @test_passage.test.title  %> test was completed!</h1>
+
+<h2>резултат: <%= @test_passage.test_result  %>%</h2>
+
+<% if @test_passage.test_result >= 85  %>
+  <h3 class='success'>Тест успешно пройден</h3>
+<% else  %>
+  <h3 class='error'>Тест провален</h3>
+<% end  %>
+
+
+<%= link_to 'All tests', tests_path %>
