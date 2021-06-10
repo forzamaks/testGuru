@@ -1,10 +1,13 @@
 class TestPassage < ApplicationRecord
+
+  SUCCESS_RESLUT_TEST_IN_PERCENT = 85.freeze
+
   belongs_to :user
   belongs_to :test
-  belongs_to :question
+  belongs_to :question, class_name: 'Question',  optional: true
 
-  before_validation :before_validation_set_first_question, on: :create
-  before_update :before_update_next_question, on: :update
+  before_validation :next_question, on: :create
+  before_update :next_question, on: :update
 
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
@@ -17,30 +20,35 @@ class TestPassage < ApplicationRecord
     question.nil?
   end
 
-  def current_question
+  def current_question_in_test
     test.questions.find_index(self.question) + 1
   end
 
   def test_result
     (self.correct_questions.to_f / test.questions.count.to_f * 100.0).to_i
-    # self.correct_questions
+  end
+
+  def success?
+    if self.test_result >= SUCCESS_RESLUT_TEST_IN_PERCENT
+      true
+    else
+      false
+    end
   end
 
   private
 
-  def before_validation_set_first_question
-    self.question = test.questions.first if test.present?
-  end
-
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    correct_answers.ids.sort == answer_ids.map(&:to_i).sort if answer_ids.present?
   end
 
   def correct_answers
     question.answers.correct
   end
 
-  def before_update_next_question
-    self.question = test.questions.order(:id).where('id > ?', question.id).first
+  def next_question
+    self.question = self.question.present? ? 
+                      test.questions.order(:id).where('id > ?', self.question.id).first :
+                      test.questions.first
   end
 end
