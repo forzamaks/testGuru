@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   scope :level_tests, -> (level) { where(level: level) }
 
-  validates :email, presence: true, uniqueness: true, format: { with: /\A\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+\z/,
+  validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP,
   message: 'Invalid e-mail format' }
   has_secure_password
 
