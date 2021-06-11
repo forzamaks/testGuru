@@ -1,0 +1,10 @@
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  > * {
+    margin: 0 .25rem;
+  }
+  &.user {
+    text-align: right;
+  }
+}

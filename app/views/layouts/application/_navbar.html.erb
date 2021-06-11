@@ -1,0 +1,13 @@
+<div class='nav'>
+  <% if logged_in? %>
+    <%= link_to root_path do %>
+      Welcome, <b><%= current_user.name %></b> Guru
+    <% end %>
+     <%= link_to 'Exit', logout_path %>
+  <% else %>
+    <p><b>Welcome Guru</b></p>
+    <%= link_to 'Registration', signup_path %>
+    <%= link_to 'Login', login_path %>
+  <% end %>
+  
+</div>

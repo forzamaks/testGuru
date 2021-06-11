@@ -1,3 +1,5 @@
+require 'digest/sha1'
+
 class User < ApplicationRecord
 
   has_many :created_tests, class_name: 'Test', foreign_key: :user_id
@@ -6,7 +8,9 @@ class User < ApplicationRecord
 
   scope :level_tests, -> (level) { where(level: level) }
 
-  validates :email, presence: true
+  validates :email, presence: true, uniqueness: true, format: { with: /\A\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+\z/,
+  message: 'Invalid e-mail format' }
+  has_secure_password
 
   def user_tests_for_level(level)
     tests.level_tests(level)
@@ -15,4 +19,5 @@ class User < ApplicationRecord
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
+
 end
