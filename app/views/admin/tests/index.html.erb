@@ -1,0 +1,21 @@
+<p>
+  <%= link_to 'New test', new_admin_test_path %>
+</p>
+<% if @tests.present? %>
+  <table style="width: 100%;text-align: center;">
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>level</th>
+        <th>question count</th>
+        <th colspan="3">links</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @tests %>
+    </tbody>
+  </table>
+  
+<% else %>
+  <p>Test not found</p>
+<% end %>
