@@ -16,7 +16,7 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = current_user.tests.new(test_params)
-
+    @test.user_id = current_user.id
     if @test.save
       redirect_to admin_test_path(@test)
     else
@@ -38,7 +38,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
-    redirect_to tests_path
+    redirect_to admin_tests_path
   end
 
   def start
@@ -53,7 +53,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id).merge(user_id: current_user.id)
+    params.require(:test).permit(:title, :level, :category_id)
   end
 
 end
