@@ -1,14 +1,15 @@
+<h1><%= t('.header') %></h1>
 <p>
-  <%= link_to 'New test', new_admin_test_path %>
+  <%= link_to t('.new_test'), new_admin_test_path %>
 </p>
 <% if @tests.present? %>
   <table style="width: 100%;text-align: center;">
     <thead>
       <tr>
-        <th>title</th>
-        <th>level</th>
-        <th>question count</th>
-        <th colspan="3">links</th>
+        <th><%= t('.title') %></th>
+        <th><%= t('.level') %></th>
+        <th><%= t('.questions_count') %></th>
+        <th colspan="3"><%= t('.action') %></th>
       </tr>
     </thead>
     <tbody>
@@ -17,5 +18,5 @@
   </table>
   
 <% else %>
-  <p>Test not found</p>
+  <p><%= t('.not_found') %></p>
 <% end %>

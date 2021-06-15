@@ -1,0 +1,63 @@
+en:  
+  admin:
+    tests:
+      create:
+        success: "Test was succesfully created"
+      index:
+        header: "Tricky Tests"
+        title: "Title"
+        level: "Level"
+        questions_count: "Questions count"
+        not_found: "Tests not found"
+        action: "Actions"
+        new_test: "New test"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+      edit:
+        header: "Edit test"
+        back: "Back"
+      new:
+        edit: "Edit"
+        back: "Back"
+        title: "Title:"
+        level: "Level:"
+        create_question: "Create new question"
+    nav:
+      title: "TestGuru - Admin Panel"
+      welcome: "Welcome <b class='nav-admin user-email'>%{name}</b> Guru |"
+      logout: "logout"
+
+    answers:
+      show:
+        answer: "Answer"
+        correct: "Correct"
+        back: "Back"
+        header: "Question %{question}"
+      new:
+        header: "New answer"
+        back: "Back"
+      edit:
+        header: "Editing answer"
+        back: "Back"
+        show: "Show"
+
+    questions:
+      show:
+        back: "Back"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+        answers: "Answers"
+        new_answer: "New answer"
+        header: "%{title} Question"
+      new:
+        back: "Back"
+        new: "Create new"
+        question: "question"
+      edit:
+        back: "Back"
+        edit: "Edit"
+        question: "question"

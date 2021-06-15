@@ -1,6 +1,7 @@
+<h1><%= t('.title')%></h1>
 <p>
-  Congratulations! You completed the <b><%= @test.title %></b> test.
+  <%= t('.t1', title: @test.title).html_safe %>
 </p>
 <p>
-Why not to finish <%= link_to 'more', tests_url %> ?
+  <%= t('.t2')%> <%= link_to t('.link'), tests_url %> ?
 </p>

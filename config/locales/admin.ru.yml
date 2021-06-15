@@ -1,0 +1,65 @@
+ru:
+  admin:
+    tests:
+      create:
+        success: "Тест успешно создан"
+      index:
+        header: "Доступные тесты"
+        title: "Название"
+        level: "Уровень"
+        questions_count: "Кол-во вопросов"
+        not_found: "Тесты не найдены"
+        action: "Действие"
+        new_test: "Новый тест"
+      test:
+        show: "Посмотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+      edit:
+        header: "Редактировать тест"
+        back: "Назад"
+      new:
+        header: "Создать новый тест"
+        back: "Назад"
+      show:
+        edit: "редактировать"
+        back: "Назад"
+        title: "Название:"
+        level: "Уровень:"
+        create_question: "Создать новый вопрос"
+    nav:
+      title: "TestGuru - панель администратора"
+      welcome: "Приветсвую <b class='nav-admin user-email'>%{name}</b> Гуру |"
+      logout: "Выход"
+
+    answers:
+      show:
+        answer: "Вопрос"
+        correct: "Корректный"
+        back: "Назад"
+        header: "Вопрос %{question}"
+      new:
+        header: "Новый ответ"
+        back: "Назад"
+      edit:
+        header: "Редактировать ответ"
+        back: "Назад"
+        show: "Посмотреть"
+    questions:
+      show:
+        back: "Назад"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+        answers: "Вопросы"
+        new_answer: "Новый вопрос"
+        header: "%{title} Вопрос"
+      new:
+        back: "Назад"
+        new: "Создать новый"
+        question: "Вопрос"
+      edit:
+        back: "Назад"
+        edit: "Редактирование"
+        question: "Вопроса"

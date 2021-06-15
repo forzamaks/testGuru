@@ -1,13 +1,11 @@
-<h1>Question <%= @answer.question.body %></h1>
-<p id="notice"><%= notice %></p>
-
+<h1><%= t('.header', question: @answer.question.body) %></h1>
 <p>
-  <b>Answer: </b>
+  <b><%= t('.answer') %></b>
   <%= @answer.title %>
 </p>
 <p>
-  <b>Correct: </b>
+  <b><%= t('.correct') %></b>
   <%= @answer.correct %>
 </p>
 
-<%= link_to 'Back', admin_question_path(@answer.question) %>
+<%= link_to t('.back'), admin_question_path(@answer.question) %>
