@@ -1,5 +1,3 @@
 class Admin < User
 
-  
-
 end
