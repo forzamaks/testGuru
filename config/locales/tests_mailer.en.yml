@@ -1,0 +1,9 @@
+en:
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
+      t1: "Congratulations! You completed the <b>%{title}</b> test."
+      t1_plain: "Congratulations! You completed the %{title} test."
+      t2: "Why not to finish"
+      link: "more"
+      title: "Hooray!"

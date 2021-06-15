@@ -1,0 +1,76 @@
+ru:
+  
+  helpers:
+    select:
+      prompt: "Пожалуйста выберите"
+    submit:
+      question:
+        create: "Создать вопрос"
+        update: "Обновить вопрос"
+      answer:
+        create: "Создать ответ"
+        update: "Обновить ответ"
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+    label:
+      question:
+        body: "Вопрос"
+      answer:
+        title: "Название"
+        correct: "Корректный"
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+
+  shared:
+    helpers:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружено %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      questions_count: "Кол-во вопросов"
+      not_found: "Тесты не найдены"
+      action: "Действие"
+    test:
+      start: "Старт"
+
+  test_passages:
+    show:
+      header: "Проходящий %{title} тест"
+      question: "Вопрос %{current} из %{total}"
+      next: "Следующий"
+    result:
+      header: "Тест %{title} успешно завершен"
+      success: "Тест успешно пройден"
+      error: "Тест провален"
+      result: "Результат: "
+      all_tests: "Все тесты"
+
+  answers:
+    answer:
+      show: "Посмотреть"
+      edit: "Редактировать"
+      delete: "Удалить"
+      confirm: "Вы уверены?"
+
+  layouts:
+    application:
+      footer:
+        info: "Проект по прохождению различных тестов"
+        link: "Учебный проект в онлайн-школе Thinknetica"
+      navbar:
+        title:
+          logined: "Приветсвую <b>%{name}</b> TestGuru"
+          not_logined: "Приветсвую TestGuru"
+        exit: "Выход"
+        registration: "Регистрация"
+        login: "Вход"

@@ -1,13 +1,13 @@
 <div class='nav'>
   <% if user_signed_in? %>
     <%= link_to root_path do %>
-      Welcome, <b><%= current_user.name %></b> Guru
+      <%= t('.title.not_logined', name: current_user.name).html_safe %>
     <% end %>
-     <%= link_to 'Exit', destroy_user_session_path, method: :delete %>
+     <%= link_to t('.exit'), destroy_user_session_path, method: :delete %>
   <% else %>
-    <p><b>Welcome Guru</b></p>
-    <%= link_to 'Registration', new_user_registration_path %>
-    <%= link_to 'Login', new_user_session_path %>
+    <p><b><%= t('.title.not_logined')%></b></p>
+    <%= link_to t('.registration'), new_user_registration_path %>
+    <%= link_to t('.login'), new_user_session_path %>
   <% end %>
   
 </div>

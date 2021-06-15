@@ -1,10 +1,10 @@
 
 <p>
-  <b>title: </b> 
+  <b><%= t('.title') %></b> 
   <%= @test.title %>
 </p>
 <p>
-  <b>level: </b> 
+  <b><%= t('.level') %></b> 
   <%= test_level(@test) %>
 </p>
 <ol>
@@ -12,11 +12,11 @@
 </ol>
 <hr/>
 <p>
-<a href="<%= new_admin_test_question_path(@test.id) %>">Create new question</a>
+  <%= link_to t('.create_question'), new_admin_test_question_path(@test.id) %>
 </p>
 
 
 <p>
-  <%= link_to 'Back', admin_tests_path %> | 
-  <%= link_to 'Edit', edit_admin_test_path(@test) %>
+  <%= link_to t('.back'), admin_tests_path %> | 
+  <%= link_to t('.edit'), edit_admin_test_path(@test) %>
 </p>

@@ -1,5 +1,5 @@
-Hooray!
+<%= t('.title')%>
 ==========
 
-Congratulations! You completed the <%= @test.title %> test.
-Choose you next test <%= tests_url %> ?
+<%= t('.t1_plain', title: @test.title) %>
+<%= t('.t2')%> <%= tests_url %> ?
