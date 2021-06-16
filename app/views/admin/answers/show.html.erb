@@ -1,11 +1,19 @@
-<h1><%= t('.header', question: @answer.question.body) %></h1>
-<p>
-  <b><%= t('.answer') %></b>
-  <%= @answer.title %>
-</p>
-<p>
-  <b><%= t('.correct') %></b>
-  <%= @answer.correct %>
-</p>
+<div class="card mb-4 mt-4">
+  <div class="card-header">
+    <%= t('.header', question: @answer.question.body) %>
+  </div>
 
-<%= link_to t('.back'), admin_question_path(@answer.question) %>
+  <div class="card-body">
+   <p class="card-text">
+      <b><%= t('.answer') %></b>
+      <%= @answer.title %>
+    </p>
+    <p class="card-text">
+      <b><%= t('.correct') %></b>
+      <%= @answer.correct %>
+    </p>
+  </div>
+  <div class="card-footer">
+    <%= link_to t('.back'), admin_question_path(@answer.question) %>
+  </div>
+</div>

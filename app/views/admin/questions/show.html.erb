@@ -1,20 +1,22 @@
+<div class="card mb-4 mt-4">
+  <div class="card-header">
+    <%= t('.header', title: @question.test.title) %>
+  </div>
 
-<h1><%= t('.header', title: @question.test.title) %></h1>
-<p><%= @question.body %></p>
-
-<h2><%= t('.answers') %></h2>
-
-<%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>
-
-<ol>
-<%= render partial: 'answers/answer', collection: @question.answers %>
-</ol>
-
-
-
-<hr/>
-<p>
-  <%= link_to t('.back'), admin_test_path(@question.test_id) %> | 
-  <%= link_to t('.edit'), edit_admin_question_path(@question) %> | 
-  <%= link_to t('.delete'), admin_question_path(@question.id), method: :delete, data: { confirm: t('.confirm') } %>
-</p>
+  <div class="card-body">
+    <h5 class="card-title">
+      <%= @question.body %>
+      
+    </h5>
+    <p class="card-text"><%= t('.answers') %></p>
+    <ol>
+      <%= render partial: 'answers/answer', collection: @question.answers %>
+    </ol>
+  </div>
+  <div class="card-footer">
+    <%= link_to t('.back'), admin_test_path(@question.test_id) %> | 
+    <%= link_to t('.edit'), edit_admin_question_path(@question) %> | 
+    <%= link_to t('.delete'), admin_question_path(@question.id), method: :delete, data: { confirm: t('.confirm') } %> |
+    <%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>
+  </div>
+</div>

@@ -1,19 +1,11 @@
-<h1><%= t('.header') %> </h1>
-<% if @tests.present? %>
-  <table style="width: 100%;text-align: center;">
-    <thead>
-      <tr>
-        <th><%= t('.title') %></th>
-        <th><%= t('.level') %></th>
-        <th><%= t('.questions_count') %></th>
-        <th><%= t('.action') %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @tests %>
-    </tbody>
-  </table>
-  
-<% else %>
-  <p><%= t('.not_found') %></p>
-<% end %>
+<div class="mt-4 mb-4">
+  <h1><%= t('.header') %> </h1>
+</div>
+
+<div class="row">
+  <% if @tests.present? %>
+    <%= render @tests %>
+  <% else %>
+    <p><%= t('.not_found') %></p>
+  <% end %>
+</div>

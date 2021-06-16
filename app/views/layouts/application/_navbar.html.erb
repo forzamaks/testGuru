@@ -1,13 +1,21 @@
-<div class='nav'>
-  <% if user_signed_in? %>
-    <%= link_to root_path do %>
-      <%= t('.title.not_logined', name: current_user.name).html_safe %>
-    <% end %>
-     <%= link_to t('.exit'), destroy_user_session_path, method: :delete %>
-  <% else %>
-    <p><b><%= t('.title.not_logined')%></b></p>
-    <%= link_to t('.registration'), new_user_registration_path %>
-    <%= link_to t('.login'), new_user_session_path %>
-  <% end %>
-  
-</div>
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+    <span class="navbar-text">
+      <% if user_signed_in? %>
+        <% if current_user.admin? %>
+          <%= link_to admin_tests_path, class: 'badge bg-dark text-light' do %>
+              A
+          <% end %>
+        <% end %>
+        <%= link_to t('.title.logined', name: current_user.name).html_safe, root_path %> |
+
+        <%= link_to t('.exit'), destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= t('.title.not_logined')%> |
+        <%= link_to t('.registration'), new_user_registration_path %> |
+        <%= link_to t('.login'), new_user_session_path %>
+      <% end %>
+    </span>
+  </div>
+</nav>

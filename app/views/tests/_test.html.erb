@@ -1,8 +1,15 @@
- <tr>
-  <td><%= test.title %></td>
-  <td><%= test_level(test) %></td>
-  <td><%= test.questions.count %></td>
-  <td>
-    <%= button_to t('.start'), start_test_path(test) %>
-  </td>
-</tr>
+<div class="col col-md-4">
+  <div class="card mb-4">
+    <div class="card-header">
+      <%= "#{t('.level')}: #{test_level(test)}" %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= test.title %></h5>
+      <p class="card-text"><%= "#{t('.questions_count')}: #{test.questions.count}" %></p>
+      
+    </div>
+    <div class="card-footer">
+      <%= button_to t('.start'), start_test_path(test), class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

@@ -1,22 +1,21 @@
+<div class="card mb-4 mt-4">
+  <div class="card-header">
+    <b><%= t('.level') %></b> 
+    <%= test_level(@test) %>
+  </div>
 
-<p>
-  <b><%= t('.title') %></b> 
-  <%= @test.title %>
-</p>
-<p>
-  <b><%= t('.level') %></b> 
-  <%= test_level(@test) %>
-</p>
-<ol>
-  <%= render partial: 'questions/question', collection: @test.questions %>
-</ol>
-<hr/>
-<p>
-  <%= link_to t('.create_question'), new_admin_test_question_path(@test.id) %>
-</p>
-
-
-<p>
-  <%= link_to t('.back'), admin_tests_path %> | 
-  <%= link_to t('.edit'), edit_admin_test_path(@test) %>
-</p>
+  <div class="card-body">
+    <h5 class="card-title">
+      <b><%= t('.title') %></b> 
+      <%= @test.title %>
+    </h5>
+    <ol>
+      <%= render partial: 'questions/question', collection: @test.questions %>
+    </ol>
+  </div>
+  <div class="card-footer">
+    <%= link_to t('.back'), admin_tests_path %> | 
+    <%= link_to t('.edit'), edit_admin_test_path(@test) %> |
+    <%= link_to t('.create_question'), new_admin_test_question_path(@test.id) %>
+  </div>
+</div>
