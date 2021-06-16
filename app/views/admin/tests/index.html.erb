@@ -3,13 +3,13 @@
   <%= link_to t('.new_test'), new_admin_test_path %>
 </p>
 <% if @tests.present? %>
-  <table style="width: 100%;text-align: center;">
+  <table class="table table-dark table-striped">
     <thead>
       <tr>
-        <th><%= t('.title') %></th>
-        <th><%= t('.level') %></th>
-        <th><%= t('.questions_count') %></th>
-        <th colspan="3"><%= t('.action') %></th>
+        <th scope="col"><%= t('.title') %></th>
+        <th scope="col"><%= t('.level') %></th>
+        <th scope="col"><%= t('.questions_count') %></th>
+        <th scope="col" colspan="3"><%= t('.action') %></th>
       </tr>
     </thead>
     <tbody>

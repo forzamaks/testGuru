@@ -13,4 +13,13 @@ module ApplicationHelper
       content_tag :p, flash[type], class:'flash alert'
     end
   end
+  def flash_class_name(name)
+    case name.to_sym
+    when :notice
+      :success
+    when :alert  
+      :danger
+    else name
+    end
+end
 end

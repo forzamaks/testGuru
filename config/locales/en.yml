@@ -33,13 +33,12 @@ en:
   tests:
     index:
       header: "Tricky Tests"
+      not_found: "Tests not found"
+    test:
+      start: "Start"
       title: "Title"
       level: "Level"
       questions_count: "Questions count"
-      not_found: "Tests not found"
-      action: "Actions"
-    test:
-      start: "Start"
 
   test_passages:
     show:
