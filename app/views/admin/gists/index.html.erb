@@ -1,0 +1,20 @@
+<h1><%= t('.header') %></h1>
+
+<% if @gists.present? %>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col"><%= t('.title') %></th>
+        <th scope="col"><%= t('.email') %></th>
+        <th scope="col"><%= t('.gist_url') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @gists %>
+    </tbody>
+  </table>
+  
+<% else %>
+  <p><%= t('.not_found') %></p>
+<% end %>
