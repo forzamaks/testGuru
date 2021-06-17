@@ -61,3 +61,13 @@ en:
         back: "Back"
         edit: "Edit"
         question: "question"
+    gists:
+      index:
+        header: "Gists list"
+        title: "Title"
+        email: "user e-mail"
+        gist_url: "link to Gist page"
+        not_found: "Gists not found"
+      show:
+        back: "Back"
+        url: "show Gist"

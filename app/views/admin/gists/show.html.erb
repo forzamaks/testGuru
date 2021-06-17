@@ -1,0 +1,13 @@
+<div class="card mb-4 mt-4">
+  <div class="card-header">
+    <%= @gist.title %>
+  </div>
+
+  <div class="card-body">
+    <p><%= break_row(@gist.content).html_safe  %></p>
+  </div>
+  <div class="card-footer">
+    <%= link_to t('.back'), admin_gists_path %> | 
+    <%= link_to t('.url'), @gist.gist_url %>
+  </div>
+</div>

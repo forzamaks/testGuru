@@ -45,12 +45,16 @@ en:
       header: "Passing the %{title} test"
       question: "Question %{current} from %{total}"
       next: "Next"
+      gist_question: "Gist question"
     result:
       header: "The %{title} test was compleated!"
       success: "Test passed successfully"
       error: "Test failed"
       result: "Result: "
       all_tests: "All tests"
+    gist:
+      success: "Gist was successfully created! <a href='%{link}' class='alert-link'>See</a>"
+      failure: "An error occurred while saving gist"
 
   answers:
     answer:

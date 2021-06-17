@@ -63,3 +63,13 @@ ru:
         back: "Назад"
         edit: "Редактирование"
         question: "Вопроса"
+    gists:
+      index:
+        header: "Список Gist"
+        title: "Название"
+        email: "E-mail пользователя"
+        gist_url: "Ссылка на страницу Gist"
+        not_found: "Gist не найдены"
+      show:
+        back: "Назад"
+        url: "Посмотреть Gist"

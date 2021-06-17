@@ -47,12 +47,16 @@ ru:
       header: "Проходящий %{title} тест"
       question: "Вопрос %{current} из %{total}"
       next: "Следующий"
+      gist_question: "Gist вопрос"
     result:
       header: "Тест %{title} успешно завершен"
       success: "Тест успешно пройден"
       error: "Тест провален"
       result: "Результат: "
       all_tests: "Все тесты"
+    gist:
+      success: "Gist успешно сохранен <a href='%{link}' class='alert-link'>Посмотреть</a>"
+      failure: "Во воремя сохранения gist произошла ошибка"
 
   answers:
     answer:

@@ -1,0 +1,6 @@
+ <tr>
+  <th scope="row"><%= gist.id %></th>
+  <td><%= link_to truncate(gist.title, length: 25, separator: '.'), admin_gist_path(gist) %></td>
+  <td><%= gist.user_email %></td>
+  <td><%= gist.gist_url %></td>
+</tr>
