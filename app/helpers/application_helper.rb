@@ -1,5 +1,7 @@
 module ApplicationHelper
 
+  TYPES_FLASH = {notice: :success, alert: :danger}.freeze
+
   def full_year
     Time.zone.now.year
   end
@@ -14,12 +16,6 @@ module ApplicationHelper
     end
   end
   def flash_class_name(name)
-    case name.to_sym
-    when :notice
-      :success
-    when :alert  
-      :danger
-    else name
-    end
-end
+    TYPES_FLASH[name.to_sym] || name
+  end
 end
