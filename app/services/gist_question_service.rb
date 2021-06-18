@@ -1,9 +1,9 @@
 class GistQuestionService
 
+  CREATE_STATUS_REQUEST = 201.freeze
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
-    # @client = client || GitHubClient.new
     @client = client || Octokit::Client.new(:access_token => ENV['GITHUB_TOKEN'])
   end
 
@@ -12,7 +12,9 @@ class GistQuestionService
   end
 
   def success?
-    @client.last_response
+    false
+    true if @client.last_response.status == CREATE_STATUS_REQUEST
+    
   end
 
   private
