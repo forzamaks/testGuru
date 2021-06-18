@@ -1,10 +1,12 @@
 <div class="card mb-4 mt-4">
   <div class="card-header">
-    <%= @gist.title %>
+    <%= @gist.question.body %>
   </div>
 
   <div class="card-body">
-    <p><%= break_row(@gist.content).html_safe  %></p>
+       <ol>
+      <%= render partial: 'answer', collection: @gist.question.answers %>
+    </ol>
   </div>
   <div class="card-footer">
     <%= link_to t('.back'), admin_gists_path %> | 

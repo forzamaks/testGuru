@@ -22,14 +22,11 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@test_passage.current_question).call
-    @gist = Gist.new(
-      title: @test_passage.current_question.body,
-      user_email: current_user.email,
-      gist_url: result.html_url,
-      content: result.files['test-guru-question.txt'].content
-      )
-    flash_options = result.present? && @gist.save ? { notice: t('.success', link: result.html_url) } : { alert: t('.failure') }
+    response = GistQuestionService.new(@test_passage.current_question)
+    result = response.call
+    @gist = Gist.new(gist_url: result.html_url, user_id: current_user.id, question_id: @test_passage.current_question.id)
+
+    flash_options = response.success? && @gist.save ? { notice: t('.success', link: result.html_url) } : { alert: t('.failure') }
     redirect_to @test_passage, flash_options
   end
 
