@@ -36,6 +36,10 @@ ru:
     index:
       header: "Доступные тесты"
       not_found: "Тесты не найдены"
+      title: "Название"
+      level: "Уровень"
+      questions_count: "Кол-во вопросов"
+      action: "Действие"
     test:
       title: "Название"
       level: "Уровень"

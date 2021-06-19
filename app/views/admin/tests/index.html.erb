@@ -6,7 +6,11 @@
   <table class="table table-dark table-striped">
     <thead>
       <tr>
-        <th scope="col"><%= t('.title') %></th>
+        <th scope="col" class='sort-by-title pointer'>
+          <%= t('.title') %>
+          <%= octicon 'arrow-up', class: 'text-success hide' %>
+          <%= octicon 'arrow-down', class: 'text-success hide' %>
+        </th>
         <th scope="col"><%= t('.level') %></th>
         <th scope="col"><%= t('.questions_count') %></th>
         <th scope="col" colspan="3"><%= t('.action') %></th>
