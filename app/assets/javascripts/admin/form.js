@@ -24,14 +24,14 @@ function validationPassword() {
   if(this.value.length == 0) {
     noneValidate(passwordField)
     noneValidate(this)
+    return
+  }
+  if(passwordField.value === this.value) {
+    successValid(passwordField)
+    successValid(this)
   } else {
-    if(passwordField.value === this.value) {
-      successValid(passwordField)
-      successValid(this)
-    } else {
-      errorValid(passwordField)
-      errorValid(this)
-    }
+    errorValid(passwordField)
+    errorValid(this)
   }
 
 }
