@@ -12,9 +12,7 @@ class GistQuestionService
   end
 
   def success?
-    false
-    true if @client.last_response.status == CREATE_STATUS_REQUEST
-    
+    @client.last_response.status == CREATE_STATUS_REQUEST   
   end
 
   private
