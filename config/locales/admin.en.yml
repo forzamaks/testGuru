@@ -25,6 +25,9 @@ en:
         title: "Title:"
         level: "Level:"
         create_question: "Create new question"
+      form_inline: 
+        submit: "Ok"
+
     nav:
       title: "TestGuru - Admin Panel"
       welcome: "Welcome <b class='nav-admin user-email'>%{name}</b> Guru |"
