@@ -28,6 +28,8 @@ ru:
         title: "Название:"
         level: "Уровень:"
         create_question: "Создать новый вопрос"
+      form_inline: 
+        submit: "Ok"
     nav:
       title: "TestGuru - панель администратора"
       welcome: "Приветсвую <b class='nav-admin user-email'>%{name}</b> Гуру |"

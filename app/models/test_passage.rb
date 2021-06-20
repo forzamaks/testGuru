@@ -28,6 +28,10 @@ class TestPassage < ApplicationRecord
     (self.correct_questions.to_f / test.questions.count.to_f * 100.0).to_i
   end
 
+  def completed_percent
+    (self.current_question_in_test.to_f / test.questions.count.to_f * 100.0).to_i
+  end
+
   def success?
     self.test_result >= SUCCESS_RESLUT_TEST_IN_PERCENT
   end
