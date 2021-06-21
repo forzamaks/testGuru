@@ -1,0 +1,17 @@
+<%= form_with url: feedback_index_path, html: { method: :post }, local: true do |form| %>
+  <div class="form-group">
+    <%= render 'shared/errors', resource: @test %>
+  <p>
+    <%= form.label :title %> 
+    <%= form.text_field :title, class: 'form-control' %>
+  </p>
+  <p>
+    <%= form.label :body %> 
+    <%= form.text_field :body, class: 'form-control' %>
+  </p>
+  
+  <p>
+    <%= form.submit class: 'btn btn-primary' %>
+  </p>
+  </div>
+<% end %>
