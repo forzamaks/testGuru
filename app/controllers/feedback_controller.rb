@@ -5,6 +5,6 @@ class FeedbackController < ApplicationController
 
   def create
     FormMailer.feedback(params).deliver_now
-    redirect_to :index
+    redirect_to feedback_index_path
   end
 end
