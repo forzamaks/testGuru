@@ -28,4 +28,10 @@ Rails.application.routes.draw do
     end
     resources :gists, only: %i[show index]
   end
+
+  resources :feedback, only: [:index, :create] do 
+    member do
+
+    end
+  end
 end
