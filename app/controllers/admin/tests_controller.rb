@@ -2,7 +2,7 @@ class Admin::TestsController < Admin::BaseController
 
   before_action :set_tests, only: [:index, :update_inline]
   before_action :find_test, only: [:destroy, :update, :edit, :show, :start, :update_inline]
-
+  before_action :all_unique_categories, only: [:create, :edit]
   def index
     
   end
@@ -67,6 +67,10 @@ class Admin::TestsController < Admin::BaseController
 
   def set_tests
     @tests = Test.all
+  end
+
+  def all_unique_categories
+    @categories = Category.all.pluck(:title)
   end
 
 end

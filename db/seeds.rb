@@ -15,15 +15,15 @@ categories = Category.create([
 ])
 
 users = User.create([
-  {name: 'test', email: 'test@test.test', encrypted_password: 'password'},
-  {name: 'admin', email: 'admin@test.test', encrypted_password: 'admin_pass'}
+  {name: 'test', email: 'test@test.com', password: 'password'},
+  {name: 'admin', email: 'admin@test.com', password: 'admin_pass', type: "Admin"}
 ])
 
 tests = Test.create([
-  {title: 'HTML', level: 1, category_id: categories[0].id, user_id: users[0].id},
-  {title: 'Ruby', level: 2, category_id: categories[1].id, user_id: users[0].id},
-  {title: 'JavaScript', level: 2, category_id: categories[0].id, user_id: users[0].id},
-  {title: 'GO', level: 3, category_id: categories[2].id, user_id: users[0].id},
+  {title: 'HTML', level: 1, category_id: categories[0].id, user_id: users[1].id},
+  {title: 'Ruby', level: 2, category_id: categories[1].id, user_id: users[1].id},
+  {title: 'JavaScript', level: 2, category_id: categories[0].id, user_id: users[1].id},
+  {title: 'GO', level: 3, category_id: categories[2].id, user_id: users[1].id},
   {title: 'Node', level: 2, category_id:  categories[1].id, user_id: users[1].id}
 ])
 
