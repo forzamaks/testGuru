@@ -72,8 +72,8 @@ Rails.application.configure do
   # config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { 
     address: 'smtp.yandex.ru',
-    port: 587,
     domain: 'yandex.ru',
+    port: 587,
     user_name: 'mak.18.sim',
     password: ENV['SMPT_PASSWORD'],
     authentication: 'plain',
