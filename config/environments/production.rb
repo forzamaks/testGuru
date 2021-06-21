@@ -71,9 +71,9 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   # config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { 
-    address: 'smtp.gmail.com',
+    address: 'smtp.yandex.ru',
     port: 587,
-    user_name: ENV['SMPT_USERNAME'],
+    user_name: 'mak.18.sim',
     password: ENV['SMPT_PASSWORD'],
     authentication: 'plain',
     enable_starttls_auto: true
