@@ -55,7 +55,7 @@ ru:
         delete: "Удалить"
         confirm: "Вы уверены?"
         answers: "Вопросы"
-        new_answer: "Новый вопрос"
+        new_answer: "Новый ответ"
         header: "%{title} Вопрос"
       new:
         back: "Назад"
