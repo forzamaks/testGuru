@@ -14,10 +14,10 @@ categories = Category.create([
   {title: 'Machine learning'}
 ])
 
-users = User.create([
-  {name: 'test', email: 'test@test.com', password: 'password'},
-  {name: 'admin', email: 'admin@test.com', password: 'admin_pass', type: "Admin"}
-])
+# users = User.create([
+#   {name: 'test', email: 'test@test.com', password: 'password'},
+#   {name: 'admin', email: 'admin@test.com', password: 'admin_pass', type: "Admin"}
+# ])
 
 tests = Test.create([
   {title: 'HTML', level: 1, category_id: categories[0].id, user_id: 1},
