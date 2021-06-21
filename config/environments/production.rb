@@ -75,8 +75,8 @@ Rails.application.configure do
     user_name: ENV['SMPT_USERNAME'],
     password: ENV['SMPT_PASSWORD'],
     authentication: 'plain',
-    enable_starttls: true
-   }
+    enable_starttls_auto: true
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
