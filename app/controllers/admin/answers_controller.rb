@@ -30,7 +30,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def destroy
     @answer.destroy
-    redirect_to @qnswer.question
+    redirect_to admin_question_path(@answer.question)
   end
 
   private
@@ -39,7 +39,7 @@ class Admin::AnswersController < Admin::BaseController
     end
 
     def answer_params
-      params.require(:answer).permit(:body, :correct)
+      params.require(:answer).permit(:title, :correct)
     end
 
     def find_question
