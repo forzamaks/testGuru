@@ -66,11 +66,11 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = {host: 'glacial-chamber-19253.herokuapp.com'}
+  config.action_mailer.default_url_options = { host: 'glacial-chamber-19253.herokuapp.com' }
 
-  config.action_mailer.delivery_method = :smpt
-  config.action_mailer.smpt_settings = { 
-    address: 'smpt.gmail.com',
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { 
+    address: 'smtp.gmail.com',
     port: 587,
     user_name: ENV['SMPT_USERNAME'],
     password: ENV['SMPT_PASSWORD'],
