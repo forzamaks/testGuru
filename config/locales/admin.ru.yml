@@ -30,6 +30,8 @@ ru:
         create_question: "Создать новый вопрос"
       form_inline: 
         submit: "Ok"
+      destroy:
+        error: "Не удалось удальть тест"
     nav:
       title: "TestGuru - панель администратора"
       welcome: "Приветсвую <b class='nav-admin user-email'>%{name}</b> Гуру |"

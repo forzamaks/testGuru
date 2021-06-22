@@ -52,6 +52,7 @@ ru:
       question: "Вопрос %{current} из %{total}"
       next: "Следующий"
       gist_question: "Gist вопрос"
+      not_found_questions: "Нет вопросов к данному тесту"
     result:
       header: "Тест %{title} успешно завершен"
       success: "Тест успешно пройден"

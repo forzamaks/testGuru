@@ -46,8 +46,12 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def destroy
-    @test.destroy
-    redirect_to admin_tests_path
+    # @test.test_passages
+    if @test.destroy
+      redirect_to admin_tests_path
+    else
+      redirect_to admin_tests_path, alert: t('.error')
+    end
   end
 
   def start
