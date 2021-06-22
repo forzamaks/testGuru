@@ -64,6 +64,8 @@ en:
         back: "Back"
         edit: "Edit"
         question: "question"
+      destroy:
+        error: "Failed to delete test"
     gists:
       index:
         header: "Gists list"

@@ -50,6 +50,7 @@ en:
       question: "Question %{current} from %{total}"
       next: "Next"
       gist_question: "Gist question"
+      not_found_questions: "Test questions not found"
     result:
       header: "The %{title} test was compleated!"
       success: "Test passed successfully"

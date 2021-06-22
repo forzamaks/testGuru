@@ -29,7 +29,7 @@ class TestPassage < ApplicationRecord
   end
 
   def completed_percent
-    (self.current_question_in_test.to_f / test.questions.count.to_f * 100.0).to_i
+    (test.questions.find_index(self.current_question).to_f / test.questions.count.to_f * 100.0).to_i
   end
 
   def success?

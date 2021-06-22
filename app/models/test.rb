@@ -1,9 +1,9 @@
 class Test < ApplicationRecord
 
   belongs_to :category
-  has_many :questions
+  has_many :questions, dependent: :restrict_with_error
   belongs_to :author, class_name: 'User', foreign_key: :user_id, optional: true
-  has_many :test_passages
+  has_many :test_passages, dependent: :restrict_with_error
   has_many :users, through: :test_passages
 
   scope :easy, -> { where(level: 0..1) }
