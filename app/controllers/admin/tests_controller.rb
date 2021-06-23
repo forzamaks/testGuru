@@ -46,7 +46,6 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def destroy
-    # @test.test_passages
     if @test.destroy
       redirect_to admin_tests_path
     else

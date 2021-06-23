@@ -1,5 +1,34 @@
 ru:
   admin:
+    badges:
+      create:
+        success: "Бейдж успешно создан"
+      index:
+        header: "Доступные бейджы"
+        title: "Название"
+        image_url: "Изображение"
+        not_found: "Бейджы не найдены"
+        action: "Действие"
+        new_test: "Новый бейдж"
+      badge:
+        show: "Посмотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+      edit:
+        header: "Редактировать бейдж"
+        back: "Назад"
+      new:
+        header: "Создать новый бейдж"
+        back: "Назад"
+      show:
+        edit: "редактировать"
+        back: "Назад"
+        title: "Название:"
+        image_url: "Изображение:"
+      destroy:
+        error: "Не удалось удальть бейдж"
+
     tests:
       create:
         success: "Тест успешно создан"

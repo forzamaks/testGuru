@@ -5,6 +5,8 @@ class Test < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: :user_id, optional: true
   has_many :test_passages, dependent: :restrict_with_error
   has_many :users, through: :test_passages
+  has_many :user_badges
+  has_many :badge, through: :user_badges
 
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
