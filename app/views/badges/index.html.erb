@@ -1,0 +1,15 @@
+
+<div class="row mt-4 mb-4">
+  <%= render current_user.badge %>
+</div>
+
+<% if @badges.present? %>
+  <div class="row mt-4 mb-4 present">
+    <%= render @badges  %>
+  </div>
+  
+
+  
+<% else %>
+  <p><%= t('.not_found') %></p>
+<% end %>

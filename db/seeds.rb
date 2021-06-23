@@ -39,6 +39,10 @@ Answer.create([
   {title: 'Вариант 1', question_id: questions[0].id},
   {title: 'Вариант 2', question_id: questions[0].id},
   {title: 'Вариант 3', correct: true, question_id: questions[0].id},
-  {title: 'Вариант 4', question_id: questions[0].id}
+  {title: 'Вариант 4', question_id: questions[0].id},
+  {title: 'Вариант 1', question_id: questions[1].id},
+  {title: 'Вариант 2', question_id: questions[1].id},
+  {title: 'Вариант 3', correct: true, question_id: questions[1].id},
+  {title: 'Вариант 4', question_id: questions[1].id}
 ])
 

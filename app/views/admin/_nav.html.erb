@@ -3,6 +3,9 @@
     <%= link_to t('.title'), root_path, class: 'navbar-brand' %>
 
     <span class="navbar-text">
+      <%= link_to admin_badges_path, class: 'badge bg-dark text-light' do %>
+          Badges
+      <% end %>
       <%= t('.welcome', name: current_user.email).html_safe %> |
       <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
     </span>

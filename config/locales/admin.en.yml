@@ -1,5 +1,31 @@
 en:  
   admin:
+    badges:
+      create:
+        success: "Bages was succesfully created"
+      index:
+        header: "Badges"
+        title: "Title"
+        image_url: "image"
+        not_found: "Badges not found"
+        action: "Actions"
+        new_test: "New badge"
+      badge:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+      edit:
+        header: "Edit bage"
+        back: "Back"
+      new:
+        edit: "Edit"
+        back: "Back"
+        title: "Title:"
+        image_url: "image:"
+      destroy:
+        error: "Destroy not compeated"
+
     tests:
       create:
         success: "Test was succesfully created"
@@ -27,7 +53,8 @@ en:
         create_question: "Create new question"
       form_inline: 
         submit: "Ok"
-
+      destroy:
+        error: "Destroy not compeated"
     nav:
       title: "TestGuru - Admin Panel"
       welcome: "Welcome <b class='nav-admin user-email'>%{name}</b> Guru |"
