@@ -19,8 +19,8 @@ class Test < ApplicationRecord
   validates :level, numericality: { greater_than_or_equal_to: 0 }
 
 
-  def self.all_test_of_category(category)
-    Test.joins(:category).where(title: category).order(id: :desc)
+  def self.all_test_of_category(category_title)
+    Test.joins(:category).where(categories: {title: category_title} ).order(id: :asc)
   end
 
 end
