@@ -9,8 +9,8 @@ class Badge < ApplicationRecord
 
   attr_accessor :types
 
-  def types
-    @types = %i[first_success_test success_level_tests sucess_category_test ]
+  def self.types
+    @types = %i[ first_success_test success_level_tests success_category_test ]
   end
 
 end

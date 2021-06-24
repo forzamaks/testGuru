@@ -11,7 +11,7 @@
     </p>
     <p>
     <%= form.label :types %> 
-    <%= form.select :badge_type, @badge.types, {prompt: true}, {class: "form-select"} %>
+    <%= form.select :badge_type, Badge.types, {prompt: true}, {class: "form-select"} %>
   </p>
     <p>
       <%= form.submit class: 'btn btn-primary' %>
