@@ -11,6 +11,10 @@ class TestPassagesController < ApplicationController
   end
 
   def update
+    if @test_passage.test.timer.present? && self.is_timer_end?
+      self.compleate_timer
+      return
+    end
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
@@ -32,13 +36,7 @@ class TestPassagesController < ApplicationController
   end
 
   def timer
-    timer = @test_passage.test.timer.minutes.since(@test_passage.created_at).to_i
-    @data = {
-      test_timer: @test_passage.test.timer,
-      timer: timer,
-      url: compleate_timer_test_passage_path,
-      is_end_time: timer <= Time.now.utc.to_i
-    }
+    @timer = @test_passage.test.timer.minutes.since(@test_passage.created_at).to_i
   end
 
   def compleate_timer
@@ -50,6 +48,10 @@ class TestPassagesController < ApplicationController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def is_timer_end?
+    @test_passage.test.timer.minutes.since(@test_passage.created_at).to_i <= Time.now.utc.to_i
   end
 
 end
