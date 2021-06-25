@@ -32,11 +32,13 @@ class TestPassagesController < ApplicationController
   end
 
   def timer
-    gon.test_timer = @test_passage.test.timer
-    @timer = @test_passage.test.timer.minutes.since(@test_passage.created_at).to_i
-    gon.url = compleate_timer_test_passage_path
-    gon.watch.timer = @timer
-    gon.watch.is_end_time = @timer <= Time.now.utc.to_i
+    timer = @test_passage.test.timer.minutes.since(@test_passage.created_at).to_i
+    @data = {
+      test_timer: @test_passage.test.timer,
+      timer: timer,
+      url: compleate_timer_test_passage_path,
+      is_end_time: timer <= Time.now.utc.to_i
+    }
   end
 
   def compleate_timer
