@@ -14,6 +14,10 @@
     <%= form.collection_select :category_id, Category.all, :id, :title, {prompt: true}, {class: "form-select"} %>
   </p>
   <p>
+    <%= form.label :timer %> 
+    <%= form.number_field :timer, class: 'form-control' %>
+  </p>
+  <p>
     <%= form.submit class: 'btn btn-primary' %>
   </p>
   </div>

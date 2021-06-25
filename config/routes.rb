@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     member do
       get :result
       post :gist
+      get :compleate_timer
     end
   end
 

@@ -48,7 +48,7 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 5.0.1'
 gem 'octicons_helper'
 
-
+gem 'gon'
 gem 'dotenv-rails'
 
 group :development, :test do

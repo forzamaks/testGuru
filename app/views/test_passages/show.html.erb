@@ -1,3 +1,7 @@
+<% unless @test_passage.test.timer.zero? %>
+  <h2 id="timer" class="text-center mt-4 mb-4"></h2>
+<%end%>
+
 <% if @test_passage.test.questions.present? %>
   <div class="mt-4 mb-4">
     <h1><%= t('.header', title: @test_passage.test.title) %></h1>

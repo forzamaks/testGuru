@@ -1,9 +1,9 @@
 class TestPassagesController < ApplicationController
 
-  before_action :set_test_passage, only: [:show, :update, :result, :gist, :reward_bage]
+  before_action :set_test_passage, only: [:show, :update, :result, :gist, :timer, :compleate_timer]
 
   def show
-
+    self.timer unless @test_passage.test.timer.zero?
   end
 
   def result
@@ -12,7 +12,6 @@ class TestPassagesController < ApplicationController
 
   def update
     @test_passage.accept!(params[:answer_ids])
-
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
       
@@ -30,6 +29,19 @@ class TestPassagesController < ApplicationController
 
     flash_options = response.success? && @gist.save ? { notice: t('.success', link: result.html_url) } : { alert: t('.failure') }
     redirect_to @test_passage, flash_options
+  end
+
+  def timer
+    gon.test_timer = @test_passage.test.timer
+    @timer = @test_passage.test.timer.minutes.since(@test_passage.created_at).to_i
+    gon.url = compleate_timer_test_passage_path
+    gon.watch.timer = @timer
+    gon.watch.is_end_time = @timer <= Time.now.utc.to_i
+  end
+
+  def compleate_timer
+    @test_passage.compleated_timer
+    redirect_to result_test_passage_path(@test_passage)
   end
 
   private

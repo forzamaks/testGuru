@@ -36,6 +36,10 @@ class TestPassage < ApplicationRecord
     self.test_result >= SUCCESS_RESLUT_TEST_IN_PERCENT
   end
 
+  def compleated_timer
+    self.current_question = nil
+  end
+
   private
 
   def correct_answer?(answer_ids)
