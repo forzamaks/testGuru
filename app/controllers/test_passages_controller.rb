@@ -11,12 +11,9 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    if @test_passage.test.timer.present? && self.is_timer_end?
-      self.compleate_timer
-      return
-    end
+    @test_passage.compleated_timer if @test_passage.test.timer.present? && self.is_timer_end?
     @test_passage.accept!(params[:answer_ids])
-    if @test_passage.completed?
+    if @test_passage.completed? || @test_passage.test.timer.present? && self.is_timer_end?
       TestsMailer.completed_test(@test_passage).deliver_now
       
       BadgesService.new(@test_passage, current_user).reward_badge if @test_passage.success?
